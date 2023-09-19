@@ -27,4 +27,4 @@ This is a starter template to get ready-to-use Django/PostgreSQL project in a De
 #### Once the container has been created:
 - If you have any VS Code error similar to "xxx extension can't be activated", just run `reload window` VS Code command.
 - Run `./manage.py migrate`
-- Run `./manage.py runserver` and go to "http://localhost:8000/dj_admin" to ensure everything works.
+- Run `./manage.py runserver` and go to "http://localhost:8000/" to ensure everything works.
