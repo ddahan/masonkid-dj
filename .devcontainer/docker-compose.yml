@@ -7,7 +7,7 @@ services:
     image: 'python:3.11.5-bullseye'
 
     volumes:
-      - ..:/workspace:delegated
+      - ..:/workspaces:delegated
 
     # Overrides default command so things don't shut down after the process ends.
     command: sleep infinity
@@ -22,7 +22,7 @@ services:
     restart: unless-stopped
 
     volumes:
-      - postgres-data:/var/lib/postgresql/data
+      - postgres-data-somename:/var/lib/postgresql/data
 
 volumes:
-  postgres-data:
+  postgres-data-somename:
