@@ -21,7 +21,7 @@ This is a starter template to get ready-to-use Django/PostgreSQL project in a lo
 
 
 #### Once the container has been created:
-- If you get this VS Code error: "Cannot activate the 'xxx' extension because it depend on the Python extension", just run `reload window` VS Code command (it's a minor VS Code bug)
+- Reload the container once (running the `reload window` VS Code command ) to ensure there is no error with extension activation due to a Dev Container bug.
 - Run `./manage.py migrate`
 - Run `./manage.py runserver` and go to "http://localhost:8000/" to ensure everything works.
 
