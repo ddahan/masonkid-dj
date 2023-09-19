@@ -1,6 +1,6 @@
 # template-devcontainer-django-pg
 
-This is a starter template to get ready-to-use Django/PostgreSQL project in a Dev Container.
+This is a starter template to get ready-to-use Django/PostgreSQL project in a local Dev Container.
 
 
 ### Specifications
@@ -12,14 +12,10 @@ This is a starter template to get ready-to-use Django/PostgreSQL project in a De
 - Package management: Poetry
 - No front-end configuration
 
-### About .env file
-
-- .env file is currently versionned becaure it's required to create the container without error. Once the container is created, you should unversion it by adding it to `.gitignore` file.
-
 ## How To
 
 #### Before cloning the container:
-- Add `/workspaces` directory to Docker Desktop (in settings > Resources > File sharing)
+- Open Docker Desktop and ddd `/workspaces` directory in settings > Resources > File sharing.
 - Install [Dev Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) in VS Code
 - Run `Clone Repository` command and clone this repository.
 
@@ -28,3 +24,7 @@ This is a starter template to get ready-to-use Django/PostgreSQL project in a De
 - If you have any VS Code error similar to "xxx extension can't be activated", just run `reload window` VS Code command.
 - Run `./manage.py migrate`
 - Run `./manage.py runserver` and go to "http://localhost:8000/" to ensure everything works.
+
+### About .env file
+
+- .env file is currently versionned because it's required to create the container without error. Once the container is created, you should un-version it by adding it to `.gitignore` file.
