@@ -1,8 +1,9 @@
 import os
 import sys
 from pathlib import Path
-import environ
+
 import dj_database_url
+import environ
 
 ##########################################################################################
 # Path
@@ -28,7 +29,7 @@ for folder in APPS_FOLDERS:
 env = environ.Env()
 
 # Take environment variables from .env file (if it exists)
-# That's why it is important to NOT version .env file 
+# That's why it is important to NOT version .env file
 # (otherwise prod environment will get local env file values!)
 environ.Env.read_env(os.path.join(BASE_DIR, ".env"))
 
@@ -49,12 +50,12 @@ ALLOWED_HOSTS = ["*"]  # To edit according your hosting platform
 ##########################################################################################
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
+    "django.contrib.admin",
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "django.contrib.sessions",
+    "django.contrib.messages",
+    "django.contrib.staticfiles",
     "corsheaders",
 ]
 
