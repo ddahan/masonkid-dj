@@ -4,7 +4,7 @@ services:
   # -- Django container --
   app:
     # vars are injected at runtime, so no need to specify env_var value here.
-    image: 'python:3.11.5-bullseye'
+    image: 'python:3.11.5-bookworm'
 
     volumes:
       - ..:/workspaces:delegated
@@ -18,7 +18,7 @@ services:
   # -- PostgreSQL container --
   db:
     env_file: .env_db # var created at build-time, so we need an env_file
-    image: 'postgres:15-bullseye'
+    image: 'postgres:15-bookworm'
     restart: unless-stopped
 
     volumes:
