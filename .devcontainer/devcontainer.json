@@ -1,5 +1,5 @@
 {
-    "name": "🤓 django-pg-starter",
+    "name": " Django Modern Cheat Sheet",
     "dockerComposeFile": "docker-compose.yml",
     "service": "app",
     "workspaceFolder": "/workspace",
@@ -61,8 +61,8 @@
                 // color customizations
                 //*********************************************************************
                 "workbench.colorCustomizations": {
-                    "titleBar.activeBackground": "#ffde57",
-                    "titleBar.activeForeground": "#4584b6"
+                    "titleBar.activeBackground": "#0f3e2e",
+                    "titleBar.activeForeground": "#ffffff"
                 },
                 //*********************************************************************
                 // python
