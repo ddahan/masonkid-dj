@@ -27,4 +27,4 @@ This is a starter template to get ready-to-use Django/PostgreSQL project in a lo
 
 ### About .env file
 
-- .env file is currently versionned because it's required to create the container without error. Once the container is created, you should un-version it by adding it to `.gitignore` file.
+- .env file is currently versionned because it's required to create the container without error. Once the container is created, you should un-version it by adding it to `.gitignore` file, and running `git rm --cached .env`
