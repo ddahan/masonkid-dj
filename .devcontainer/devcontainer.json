@@ -1,5 +1,5 @@
 {
-    "name": " Django Modern Cheat Sheet",
+    "name": "Template Django/PostgreSQL",
     "dockerComposeFile": "docker-compose.yml",
     "service": "app",
     "workspaceFolder": "/workspace",
