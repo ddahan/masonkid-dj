@@ -3,7 +3,7 @@ version: '3'
 services:
 
   srv_django:
-    container_name: "ctn_django"
+    container_name: "masonkid_ctn_django"
     # vars are injected at runtime, so no need to specify env_var value here.
     image: 'python:3.11.6-bookworm'
     volumes:
@@ -14,7 +14,7 @@ services:
       - 8000
 
   srv_postgres:
-    container_name: "ctn_postgres"
+    container_name: "masonkid_ctn_postgres"
     environment:
       - POSTGRES_DB=mydb
       - POSTGRES_USER=myuser
