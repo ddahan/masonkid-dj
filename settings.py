@@ -5,19 +5,8 @@ from pathlib import Path
 import dj_database_url
 import environ
 
-##########################################################################################
-# Path
-##########################################################################################
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent
 
-APP_ROOT = "dj_apps"
-APPS_FOLDERS = [
-    APP_ROOT,
-    # TODO: add f"{APP_ROOT}/<my_app_name>" for each new app
-]
-for folder in APPS_FOLDERS:
-    sys.path.insert(0, os.path.join(BASE_DIR, folder))
 
 ##########################################################################################
 # Environment
@@ -43,15 +32,22 @@ ALLOWED_HOSTS = ["*"]  # To edit according your hosting platform
 # Apps definition
 ##########################################################################################
 
-INSTALLED_APPS = [
+DJANGO_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+]
+
+THIRD_PARTY_APPS = [
     "corsheaders",
 ]
+
+MY_APPS = []  # Add your apps here
+
+INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + MY_APPS
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -64,8 +60,16 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = "dj_config.urls"
-WSGI_APPLICATION = "dj_config.wsgi.application"
+ROOT_URLCONF = "urls"
+WSGI_APPLICATION = "wsgi.application"
+
+##########################################################################################
+# DX: Adding apps to the path is required for auto import
+##########################################################################################
+
+APP_ROOT = "dj_apps"
+for new_path in [APP_ROOT] + [f"{APP_ROOT}/{folder}" for folder in MY_APPS]:
+    sys.path.insert(0, os.path.join(BASE_DIR, new_path))
 
 
 ##########################################################################################
@@ -110,7 +114,7 @@ TEMPLATES = [
 # https://docs.djangoproject.com/en/dev/howto/static-files/
 ##########################################################################################
 
-STATIC_URL = "/static/"
+STATIC_URL = "static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
 ##########################################################################################

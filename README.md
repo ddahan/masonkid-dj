@@ -1,6 +1,6 @@
-# template-devcontainer-django-pg
+# Django Mason Kid Starter
 
-This is a starter template to get ready-to-use Django/PostgreSQL project in a local Dev Container.
+A minimal Django Starter Template for quick SaaS.
 
 
 ### Specifications
@@ -22,9 +22,6 @@ This is a starter template to get ready-to-use Django/PostgreSQL project in a lo
 
 #### Once the container has been created:
 - Reload the container once (running the `reload window` VS Code command ) to ensure there is no error with extension activation due to a Dev Container bug.
+- Create a `.env` file based on `.env.example` file.
 - Run `./manage.py migrate`
 - Run `./manage.py runserver` and go to "http://localhost:8000/" to ensure everything works.
-
-### About .env file
-
-- .env file is currently versionned because it's required to create the container without error. Once the container is created, you should un-version it by adding it to `.gitignore` file, and running `git rm --cached .env`

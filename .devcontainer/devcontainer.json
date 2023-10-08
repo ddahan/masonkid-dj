@@ -1,7 +1,7 @@
 {
-    "name": "Template Django/PostgreSQL",
+    "name": "🧱 masonkid-dj",
     "dockerComposeFile": "docker-compose.yml",
-    "service": "app",
+    "service": "srv_django",
     "workspaceFolder": "/workspace",
     "containerEnv": {
         "PYTHONUNBUFFERED": "1",
@@ -55,14 +55,15 @@
                 "editor.wordWrap": "wordWrapColumn",
                 "editor.wordWrapColumn": 90,
                 "editor.defaultFormatter": null, // overrided per language
-                "editor.tabSize": 2,
+                "editor.tabSize": 4,
+                "editor.indentSize": "tabSize",
                 "editor.formatOnSave": true,
                 //*********************************************************************
                 // color customizations
                 //*********************************************************************
                 "workbench.colorCustomizations": {
-                    "titleBar.activeBackground": "#0f3e2e",
-                    "titleBar.activeForeground": "#ffffff"
+                    "titleBar.activeBackground": "#9b543d",
+                    "titleBar.activeForeground": "#ffd242"
                 },
                 //*********************************************************************
                 // python
@@ -86,6 +87,13 @@
                 "python.analysis.extraPaths": [
                     "${workspaceFolder}/dj_apps"
                     // TODO: add "${workspaceFolder}/dj_apps/<my_app>" for any new app,
+                ],
+                //*********************************************************************
+                // black
+                //*********************************************************************
+                "black-formatter.args": [
+                    "--config",
+                    "pyproject.toml"
                 ],
                 "[python]": {
                     "editor.defaultFormatter": "ms-python.black-formatter",

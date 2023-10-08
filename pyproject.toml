@@ -1,9 +1,9 @@
 [tool]
 
 [tool.poetry]
-name = "django-pg-starter"
-version = "1.0.0"
-description = "Starter Template for with Django and PostgreSQL"
+name = "Django Mason Kid Starter"
+version = "0.0.1"
+description = "Django Mason Kid Starter"
 authors = ["David Dahan <david.dahan3@gmail.com>"]
 
 [tool.poetry.dependencies]
@@ -11,10 +11,14 @@ authors = ["David Dahan <david.dahan3@gmail.com>"]
 ##########################################################################################
 # Main
 ##########################################################################################
-python = "3.11.5"
+python = "3.11.6"
 Django = "4.*"       # https://github.com/django/django
 django-environ = "*" # https://github.com/joke2k/django-environ
 
+##########################################################################################
+# Security
+##########################################################################################
+django-cors-headers = "*" # https://github.com/adamchainz/django-cors-headers
 
 ##########################################################################################
 # Database
@@ -24,14 +28,14 @@ psycopg = { extras = [
     "binary",
 ], version = "*" } # https://github.com/psycopg/psycopg
 
+##########################################################################################
+# DX & Debug
+##########################################################################################
+ruff = "*" # https://github.com/charliermarsh/ruff
+ipdb = "*" # https://github.com/gotcha/ipdb
 
-##########################################################################################
-# Misc
-##########################################################################################
-django-cors-headers = "*" # https://github.com/adamchainz/django-cors-headers
-gunicorn = "*"            # https://github.com/benoitc/gunicorn
-ruff = "*"                # https://github.com/charliermarsh/ruff
-ipdb = "*"                # https://github.com/gotcha/ipdb
+[tool.black]
+target-version = ["py311"]
 
 
 [tool.ruff]
