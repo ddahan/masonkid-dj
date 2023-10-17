@@ -2,7 +2,7 @@
 
 [tool.poetry]
 name = "Django Mason Kid Starter"
-version = "0.0.1"
+version = "0.0.2"
 description = "Django Mason Kid Starter"
 authors = ["David Dahan <david.dahan3@gmail.com>"]
 
