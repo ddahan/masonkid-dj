@@ -5,7 +5,8 @@ from pathlib import Path
 import dj_database_url
 import environ
 
-BASE_DIR = Path(__file__).resolve().parent
+CONFIG_DIR = Path(__file__).resolve().parent
+BASE_DIR = CONFIG_DIR.parent
 
 
 ##########################################################################################
@@ -17,7 +18,7 @@ env = environ.Env()
 # Take environment variables from .env file (if it exists)
 # That's why it is important to NOT version .env file
 # (otherwise prod environment will get local env file values!)
-environ.Env.read_env(os.path.join(BASE_DIR, ".env"))
+environ.Env.read_env(os.path.join(CONFIG_DIR, ".env"))
 
 ##########################################################################################
 # Security
@@ -45,7 +46,13 @@ THIRD_PARTY_APPS = [
     "corsheaders",
 ]
 
-MY_APPS = []  # Add your apps here
+APP_FOLDER = "dj_apps"
+
+# Create apps in dj_apps folder sothat they are automatically detected
+MY_APPS = os.listdir(BASE_DIR / Path(APP_FOLDER))
+
+for new_path in [APP_FOLDER] + [f"{APP_FOLDER}/{folder}" for folder in MY_APPS]:
+    sys.path.insert(0, os.path.join(BASE_DIR, new_path))
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + MY_APPS
 
@@ -61,7 +68,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "urls"
-WSGI_APPLICATION = "wsgi.application"
+WSGI_APPLICATION = "config.wsgi.application"
 
 ##########################################################################################
 # DX: Adding apps to the path is required for auto import

@@ -7,8 +7,7 @@ A minimal Django Starter Template for quick SaaS.
 
 - Main containers: Python/Django (service_app) and PostgreSQL (service_db)
 - Environment variables are handled with `.env` file (via django-environ)
-- Linting / Imports auto-sorting: Ruff
-- Auto-Formatting: Black
+- Linting / Imports auto-sorting/ Auto-formatting: Ruff
 - Package management: Poetry
 - No front-end configuration
 
@@ -22,6 +21,6 @@ A minimal Django Starter Template for quick SaaS.
 
 #### Once the container has been created:
 - Reload the container once (running the `reload window` VS Code command ) to ensure there is no error with extension activation due to a Dev Container bug.
-- Create a `.env` file based on `.env.example` file.
+- Create a `.env` file based on `.env.example` file in the `config` folder.
 - Run `./manage.py migrate`
 - Run `./manage.py runserver` and go to "http://localhost:8000/" to ensure everything works.

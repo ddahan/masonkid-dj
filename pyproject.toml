@@ -34,9 +34,6 @@ psycopg = { extras = [
 ruff = "*" # https://github.com/charliermarsh/ruff
 ipdb = "*" # https://github.com/gotcha/ipdb
 
-[tool.black]
-target-version = ["py311"]
-
 
 [tool.ruff]
 line-length = 90

@@ -33,7 +33,6 @@
             "extensions": [
                 "ms-python.python",
                 "ms-python.vscode-pylance",
-                "ms-python.black-formatter",
                 "charliermarsh.ruff",
                 "tamasfe.even-better-toml"
             ],
@@ -73,9 +72,9 @@
                     "*"
                 ], // disable linting as it would be redundant with Ruff 
                 "python.pythonPath": "/usr/local/bin/python",
-                "python.envFile": "${workspaceFolder}/.env",
+                "python.envFile": "${workspaceFolder}/config/.env",
                 "python.analysis.autoImportCompletions": true,
-                "python.analysis.importFormat": "absolute",
+                "python.analysis.importFormat": "relative",
                 "python.analysis.indexing": true,
                 "python.analysis.packageIndexDepths": [
                     {
@@ -88,20 +87,28 @@
                     "${workspaceFolder}/dj_apps"
                     // TODO: add "${workspaceFolder}/dj_apps/<my_app>" for any new app,
                 ],
-                //*********************************************************************
-                // black
-                //*********************************************************************
-                "black-formatter.args": [
-                    "--config",
-                    "pyproject.toml"
-                ],
+                "ruff.enableExperimentalFormatter": true,
                 "[python]": {
-                    "editor.defaultFormatter": "ms-python.black-formatter",
+                    "editor.defaultFormatter": "charliermarsh.ruff",
                     "editor.formatOnSave": true,
                     "editor.codeActionsOnSave": {
                         "source.organizeImports": true
                     }
-                }
+                },
+                //*********************************************************************
+                // VSCODE icons
+                //*********************************************************************
+                "vsicons.presets.folders": false,
+                "vsicons.associations.folders": [
+                    {
+                        "icon": "src",
+                        "extensions": [
+                            "dj_apps"
+                        ],
+                        "format": "svg",
+                        "overrides": "new"
+                    }
+                ]
             }
         }
     }
