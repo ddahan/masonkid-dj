@@ -51,6 +51,7 @@ APP_FOLDER = "dj_apps"
 # Create apps in dj_apps folder sothat they are automatically detected
 MY_APPS = os.listdir(BASE_DIR / Path(APP_FOLDER))
 
+# Adding apps to the path is required for auto import
 for new_path in [APP_FOLDER] + [f"{APP_FOLDER}/{folder}" for folder in MY_APPS]:
     sys.path.insert(0, os.path.join(BASE_DIR, new_path))
 
@@ -69,14 +70,6 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "urls"
 WSGI_APPLICATION = "config.wsgi.application"
-
-##########################################################################################
-# DX: Adding apps to the path is required for auto import
-##########################################################################################
-
-APP_ROOT = "dj_apps"
-for new_path in [APP_ROOT] + [f"{APP_ROOT}/{folder}" for folder in MY_APPS]:
-    sys.path.insert(0, os.path.join(BASE_DIR, new_path))
 
 
 ##########################################################################################
