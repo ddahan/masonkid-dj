@@ -2,8 +2,6 @@
 
 ## 0.0.2
 
-*See the code diff [here](https://github.com/ddahan/masonkid-dj/compare/5a46c1a83d51f6e74e6cfd2add281b3d54a1ed70...4065d27cec5510b992f031b08398e151d6520fbb)*
-
 - Renamed the Project MasonKid
 - Changed tabSize
 - Changed auto-import types to relative
